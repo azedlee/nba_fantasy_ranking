@@ -518,61 +518,61 @@
 
 <p>The above time series graph was one of the first graphs I made for fun, but sparked a bunch of ideas on how to use it. Initially, I just wanted to see the series on how the top tier players achieved through the whole career. Later I figured, I can compared players between different tiers, countries and draft rounds, which is what I did below.</p>
 
-<p><img src="../screenshots/best_avg_halfavg_worst.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/best_avg_halfavg_worst.png" alt="best_avg_halfavg_worst"></p>
 
 <p>It is clear that LeBron James, being a top tier fantasy pick, was miles ahead of an average player. What was interesting was an average player like Anthony Johnson was not as good as I thought. Although he may have been one of the players at the median, Ronnie Price, who was half of the median (hence, half-average), was more consistent. I also did one for one of the players at the bottom 1st percentile and Cuonzo Martin did not show up on the graph at all. I wonder why until I plotted all the 1st percentile players below.</p>
 
-<p><img src="../screenshots/worst_players.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/worst_players.png" alt="worst_players"></p>
 
 <p>Most players who were at the bottom percentile were players that only played limited amount of games per season and were either cut or benched the rest of the season. I thought about subsetting them out, but even after subsetting, they did not affect my model much, so I just left them out when I was predicting for the upcoming season instead. However, I was interested to see how large many of these types of players were labelled in my "Danger" category.</p>
 
-<p><img src="../screenshots/game_risk_bar.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/game_risk_bar.png" alt="game_risk_bar"></p>
 
 <p>Although kind of cluttered, it was clear that low risk and danger players are the higher of the 4. This helped me confirmed that when I'm doing my final predictions later on that I subset the data with players who have played more than a certain threshold of games or limit the amount of players I want to predict.</p>
 
-<p><img src="../screenshot2/Age_vs_avg_risk.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/Age_vs_avg_risk.png" alt="age_vs_avg_risk"></p>
 
 <p>As experted, when you are younger or older, your game risk is higher. Most rookies don't get much playing time as many teams prefer to groom them off the court, while giving them some garbage time (blow out games) for experience. Rarely rookies get consistent playing time or play in every game. Older players have a higher game risk because they don't have the stamina and are more susceptible to injuries. Generally speaking, older players, also referred to as veterans, are usually there to help teach and bring confidence to the team's younger players. They don't play a lot of minutes and don't play every game, which is why their game risk is much higher.</p>
 
-<p><img src="../screenshot2/wins_vs_risk.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/wins_vs_risk.png" alt="wins_vs_risk"></p>
 
 <p>Also as expected with player's riskiness versus their wins. Players, who avoid injury risk, tend to be able to play more and stick to their team's game plan and output more wins.</p>
 
-<p><img src="../screenshot2/mean_fp_vs_age.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/mean_fp_vs_age.png" alt="mean_fp_vs_age"></p>
 
 <p>Players closer to their prime, roughly around 26-30, output higher average fantasy points. Another thing that is noteworthy is the increase from 18 to 22 and a decrease back to 23 before another increase. The reason is because in 2006, NBA set an age limit of 19, which is usually 1 year of college or 1 year playing overseas. The reason for the age limit is because mainly players, who are drafted out of high school, are more prone to bad decisions in life, especially if they do not pan out in the NBA. Players who leave college after 1 year, are represented by the first increase and players who leave after 4 years of college, are represented by the dip at the age 23 mark.</p>
 
-<p><img src="../screenshot2/mean_fp_vs_gp.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/mean_fp_vs_gp.png" alt="mean_fp_vs_gp"></p>
 
 <p>This is rather fun to look at. The more games a player plays, the higher their mean fantasy point output is. It makes sense because if you aren't performing well, you shouldn't be playing in so many games. Good players play at least 30 minutes per game and as many games as they are capable. What is interesting to me is the jump at 50 games played. For losing teams, 50 games seems to be the point where good players will stop the 82 game grind and start to take more rest days, especially if they are completely out of the playoff run or if they have a lingering injury.</p>
 
 <p>I was always curious on how USA players' fantasy value differed from international players. Although international players are up and coming, I don't recall any strong candidate that was every picked early. I decided to compare USA and international players based on where they were drafted in the NBA draft and compare their fantasy values.</p>
 
-<p><img src="../screenshots/first_round.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/first_round.png" alt="first_round"></p>
 
-<p><img src="../screenshots/second_round.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/second_round.png" alt="second_round"></p>
 
-<p><img src="../screenshots/third_round.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/third_round.png" alt="third_round"></p>
 
 <p>It looks pretty clearcut that in the past 20 seasons, the top 5 USA players drafted in the first round compared to the top 5 international players drafted in the first round were better fantasy players. However, starting from the 2005 season, international players in the 2nd round or undrafted, who were most likely being underrated, started to turn up to be on par with their USA counter parts. Currently, there are tons of NBA teams drafting more international players, so I wouldn't be surprised if international players in the future will be on par, fantasy wise, with USA players. Some international players not on the list, who were drafted in the first round and may become a fantasy studs include Kristaps Porzingis, Dario Saric, Mario Hezonja, Emmanuel Mudiay, Andrew Wiggins and Jusuf Nurkic.</p>
 
 <p>Next, I wanted to see the density spread for fantasy points mean, standard deviation and variance. I expected that the 1st percentile to be closer to 0 based on what I found out earlier, but I also wanted to see how the rest of the distribution shaped out.</p>
 
-<p><img src="../screenshots/density_fp_mean.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/density_fp_mean.png" alt="density_fp_mean"></p>
 
-<p><img src="../screenshots/density_fp_std.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/density_fp_std.png" alt="density_fp_std"></p>
 
-<p><img src="../screenshots/density_fp_var.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/density_fp_var.png" alt="density_fp_var"></p>
 
 <p>I must say, I was quite surprised at the results. I expected there to be a lot of values below the mean, but I did not expect so many players playing below the average. This just shows that in standard league, where you are only drafting 156 players, you are mostly drafting players way above the mean. It also shows how much of a fantasy monster the top 1st percentile are and how much they can affect a team. This also solidified my reasoning that less injury prone and consistent players should be emphasized on because you can't stand losing a fantasy monster to injury. The standard deviation and variance were normally distributed. I'd assume the ridicuously high variance players, which is creating a skewed right distribution, are players who played 2 games, one with a negative fantasy score and then another game with a high fantasy score.</p>
 
 <p>Lastly, I wanted to make sure that my aggregate ranks were somewhat normally distributed and also that all my target variables were linearly correlated with each other.</p>
 
-<p><img src="../screenshots/density_agg_rank.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/density_agg_rank.png" alt="density_agg_rank"></p>
 
-<p><img src="../screenshots/density_clutch_rank.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/density_clutch_rank.png" alt="density_clutch_rank"></p>
 
-<p><img src="../screenshot2/dummy_corr.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/dummy_corr.png" alt="dummy_corr"></p>
 
 <p>I was happy to see that all my dummy target variables I created were very correlated with each other. Clutch and game risk have close to 0 correlation, which is good because it makes sense. The higher the game risk, or games he can actually play, the less chance that player plays during the clutch.</p>
 
@@ -617,15 +617,15 @@
 <h1>
 <a id="linear-logistic-lasso-ridge-and-elastic-net-results" class="anchor" href="#linear-logistic-lasso-ridge-and-elastic-net-results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Linear, Logistic, Lasso, Ridge and Elastic Net Results</h1>
 
-<p><img src="../screenshots/lr_agg_rank.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/lr_agg_rank.png" alt="linreg_agg_rank"></p>
 
-<p><img src="../screenshots/lr_clutch_rank.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/lr_clutch_rank.png" alt="linreg_clutch_rank"></p>
 
-<p><img src="../screenshots/lr_fp_mean.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/lr_fp_mean.png" alt="linreg_fp_mean"></p>
 
-<p><img src="../screenshots/lr_fp_std.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/lr_fp_std.png" alt="linreg_fp_std"></p>
 
-<p><img src="../screenshots/lr_fp_var.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/lr_fp_var.png" alt="linreg_fp_var"></p>
 
 <p>Before running Linear, Logistic, Lasso, Ridge and Elastic Net, I manually took out some columns that had 0 correlation with my target variables. Each target variable had different 0 correlations with each columns, so it took a long time to remove obvious redundancies.</p>
 
@@ -636,12 +636,12 @@
 <h2>
 <a id="logistic-regression-rocauc" class="anchor" href="#logistic-regression-rocauc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logistic Regression ROC/AUC</h2>
 
-<p><img src="../screenshots/multiclass_roc.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/multiclass_roc.png" alt="multiclass_roc_logreg"></p>
 
 <h2>
 <a id="logistic-regression-classification-report" class="anchor" href="#logistic-regression-classification-report" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logistic Regression Classification Report</h2>
 
-<p><img src="../screenshots/logreg_report.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/logreg_report.png" alt="logreg_class_report"></p>
 
 <p>Games Missed Risk was expected to perform poorly. I wasn't too surprised with the results because of the initial fantasy points mean density graph. There are more players performing lower than average due to the different amount of games a superstar or allstar performed compared to a bench player or a player on the borderline to being cut. Because of that, the previously games missed risk bar graph showed that low risk and danger had the most volume of players, so the precision that they were correctly identified was higher. Precision is when the model predicts yes, how often is it correct. However, both precision and recall were not great, there were more false negative and false positives than true positives and true negatives. Recall is how often the model predicts yes, and it is actually yes. Hence, the low F1-score. F1-score is the weighted average between precision and recall, where 0 is bad and 1 is good. The higher the value the better the predictor is at guessing correctly. This may be interesting to see if it can be tweaked a bit more, such as moving to 3 classes instead of 4, but I wanted to see how my Random Forest performed in comparison to my logistic regression. The ROC curve (Receiver Operating Characteristic) is a chart that plots the True Positives over the False Positives. The point of the curve is to make sure that when your model is predicting if it is yes or no, at what probability rate is the model predicting yes and it actually is yes, and no when it is actually yes. The diagonal line is the baseline, where guess would be the same probability. Below the line is your model guessing no more, when it is actually yes.</p>
 
@@ -654,7 +654,7 @@
 
 <p>Some features do make sense, such as Clutch per48's PCT_DREB, REB_PCT, PTS and PTS_PAINT. Players who play better defense, causing more missed shots and increasing rebounds, while also scoring a lot of points, and especially points in the paint, are more likely to perform better during the clutch period.</p>
 
-<p><img src="../screenshot2/lr_fi.png" alt=""></p>
+<p>![<a href="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/lr_fi.png">https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/lr_fi.png</a>)</p>
 
 <h1>
 <a id="random-forest-results" class="anchor" href="#random-forest-results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random Forest Results</h1>
@@ -662,29 +662,29 @@
 <h2>
 <a id="random-forest-mean-squared-error" class="anchor" href="#random-forest-mean-squared-error" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random Forest Mean Squared Error</h2>
 
-<p><img src="../screenshots/rf_mse.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/rf_mse.png" alt="rf_mse"></p>
 
 <h2>
 <a id="random-forest-residual-mean-squared-error" class="anchor" href="#random-forest-residual-mean-squared-error" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random Forest Residual Mean Squared Error</h2>
 
-<p><img src="../screenshots/rf_rmse.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/rf_rmse.png" alt="rf_rmse"></p>
 
 <h2>
 <a id="random-forest-r-squared" class="anchor" href="#random-forest-r-squared" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random Forest R-Squared</h2>
 
-<p><img src="../screenshots/rf_r2.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/rf_r2.png" alt="rf_r2"></p>
 
 <p>My Random Forest performed exceptionally well for their Mean Squared Error, Residual Mean Squared Error and R^2. They are all far superior than their average (baseline) and much better than the performance than Linear/Logistic Regression, Lasso, Ridge and Elastic Net.</p>
 
 <h1>
 <a id="confusion-matrix" class="anchor" href="#confusion-matrix" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Confusion Matrix</h1>
 
-<p><img src="../screenshot2/confusionmatrix.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/confusionmatrix.png" alt="conf_matrix"></p>
 
 <h2>
 <a id="random-forest-classification-report" class="anchor" href="#random-forest-classification-report" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random Forest Classification Report</h2>
 
-<p><img src="../screenshots/rf_report.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/rf_report.png" alt="rf_report"></p>
 
 <p>The confusion matrix is to detect how many True Positive, False Positive, True Negative and False Negative there are when my model is predicting if the player is more injury prone or not.</p>
 
@@ -736,7 +736,7 @@
 </li>
 </ol>
 
-<p><img src="../screenshot2/rf_fi.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/rf_fi.png" alt="rf_fi"></p>
 
 <p><a href="#table_of_contents">Back to top</a></p>
 
@@ -754,27 +754,27 @@
 
 <p>ESPN had the most accurate predictions with 16 correct in 3 rounds (44% accuracy), while my ranking tied with Yahoo and CBS with 9 correct in 3 rounds (25% accuracy).</p>
 
-<p><img src="../screenshot2/2014_15.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/2014_15.png" alt="2014_15"></p>
 
 <h1>
 <a id="2015-16-season-ranking-comparisons" class="anchor" href="#2015-16-season-ranking-comparisons" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2015-16 Season Ranking Comparisons</h1>
 
 <p>My ranking did the best in this season with 14 correct in 3 rounds (38.89%), Yahoo and ESPN tied with 13 correct in 3 rounds (36.11%) and CBS had, by far, the worst original rank with 9 correct in 3 rounds (25%).</p>
 
-<p><img src="../screenshot2/2015_16.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/2015_16.png" alt="2015_16"></p>
 
 <h1>
 <a id="2016-17-season-ranking-comparisons" class="anchor" href="#2016-17-season-ranking-comparisons" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-17 Season Ranking Comparisons</h1>
 
 <p>Since this is the current season, there isn't a base Z-Score I could use to compare the ranks. Instead, I compared my ranks with each of the other websites to see the similarities and differences. CBS has the most similarities with my ranking, while Yahoo and ESPN tied with the same amount of similar rankings as mine. CBS does seem to have performed the worst, based off of the last 2 seasons, but because CBS didn't supply original rankings past 2 seasons ago, I could not see whether or not they performed better in the past. Although based off of my experience, I'm fairly confident that my ranking system does seem rather logical, but will have to see how I fare at the end of the season.</p>
 
-<p><img src="../screenshot2/2016_17.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/2016_17.png" alt="2016_17"></p>
 
 <p>Based off of the last 2 seasons, CBS does seem to have the worst Z-Score ranking, while ESPN had the best performance. Yahoo and my ranking are similar, but mine performing slightly better. I am not sure how ESPN is obtaining such a high score because some of the ranking system does not make much sense and does not seem to be their "original" preseason rank. However, I do have each websites "original" rank for the 2016-17 season, so we will see how they really fared.</p>
 
 <p>Below is my full 13 rounds, 12 players per round, bucket system.</p>
 
-<p><img src="../screenshot2/2016_17_predict.png" alt=""></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/2016_17_predict.png" alt="2016_17_predict"></p>
 
 <p>There is no way to justify whether or not my predictions are correct or not until the end of the season, but based off of experience alone, there are a couple of hiccups. First off, DeMar DeRozan should not be drafted in the first round and Kevin Durant should be in the first round. However, DeMar DeRozan may do well and explode this season for fantasy, so my algorithm may be correct. Overall, it does seem relatively good. I would definitely follow this ranking system for my next fantasy draft to test it out on first hand.</p>
 

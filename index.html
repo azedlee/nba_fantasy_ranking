@@ -70,372 +70,13 @@
 <a id="ii-description-of-data-" class="anchor" href="#ii-description-of-data-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>II. Description of data <a id="data_description"></a>
 </h1>
 
-<p>All data was scraped from stats.nba.com, which is hosted by SAP HANA relational database. NBA has been keeping very advanced statistics of all players, such as, the distance on where they shot, how their opponent's average, percentage of assisted and unassisted shots, and many more. Below are the datasets and the columns I used for this report.</p>
-
-<p><a href="#table_of_contents">Back to top</a></p>
-
-<h2>
-<a id="traditional-stats-totals-1996-97-to-2015-16" class="anchor" href="#traditional-stats-totals-1996-97-to-2015-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Traditional Stats Totals (1996-97 to 2015-16)</h2>
-
-<h3>
-<a id="base-dataset" class="anchor" href="#base-dataset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Base Dataset</h3>
-
-<ul>
-<li>PLAYER_ID: Unique ID for each Player</li>
-<li>PLAYER_NAME: Players Name</li>
-<li>AGE: Players Age per Season</li>
-<li>GP: Games played during that Season</li>
-<li>W: Wins</li>
-<li>L: Losses</li>
-<li>MIN: Total Minutes played</li>
-<li>FGM: Total Field Goals Made</li>
-<li>FGA: Total Field Goal Attempts</li>
-<li>FG_PCT: Field Goal Percentage</li>
-<li>FG3M: 3Pts Made</li>
-<li>FG3A: 3Pt Attempts</li>
-<li>FG3_PCT: 3Pt Percentage</li>
-<li>FTM: Free Throws Made</li>
-<li>FTA: Free Throw Attempts</li>
-<li>FT_PCT: Free Throw Percentage</li>
-<li>OREB: Total Offensive Rebounds</li>
-<li>DREB: Total Defensive Rebounds</li>
-<li>REB: Total Combined Rebounds</li>
-<li>AST: Total Assists</li>
-<li>TOV: Total Turnovers</li>
-<li>STL: Total Steals</li>
-<li>BLK: Total Blocks</li>
-<li>BLKA: Total Block Attempts</li>
-<li>PF: Total Personal Fouls</li>
-<li>PFD: Total Fouls Drawn against Opponents</li>
-<li>PTS: Total Points</li>
-<li>PLUS_MINUS: Difference between how much the team scores and opponent scores while player is on court</li>
-<li>DD2: Double digit in 2 categories (Double Doubles)</li>
-<li>TD3: Triple Doubles in 3 categories (Triple Doubles)</li>
-</ul>
-
-<h3>
-<a id="advanced-dataset" class="anchor" href="#advanced-dataset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advanced Dataset</h3>
-
-<ul>
-<li>PLAYER_ID: Unique ID for each Player</li>
-<li>OFF_RATING: Per 100 possessions, number of points the team scores while player is on the court</li>
-<li>DEF_RATING: Per 100 possessions, number of points the team allows while player is on the court</li>
-<li>NET_RATING: Difference between the Offense and Defensive Rating</li>
-<li>AST_PCT: The percentage of teammate's field goals that the player assisted</li>
-<li>AST_TO: Assist Turnover Ratio is the number of assists for every turnover the player makes</li>
-<li>AST_RATIO: Per 100 possessions, number of assists a player averages</li>
-<li>OREB_PCT: Percentage of Offensive Rebounds a player obtains while on the court</li>
-<li>DREB_PCT: Percentage of Defensive Rebounds a player obtains while on the court</li>
-<li>REB_PCT: Percentage of Rebounds a player obtains while on the court</li>
-<li>TM_TOV_PCT: Per 100 possessions, the average number of turnover the player commits</li>
-<li>EFG_PCT: Effective Field Goal percentage is an adjusted version of Field Goals Made by making 3pt shots 1.5 more valuable than 2pters</li>
-<li>TS_PCT: True Shooting Percentage adjusts 3pt and FT as part of percentage, formula: Points/[(2)(Field Goal Attempts) + (0.44)(Free Throw Attempts)]</li>
-<li>USG_PCT: Percentage of the team's offensive possessions a player uses while on the court</li>
-<li>PACE: Number of possessions per 48 minutes</li>
-<li>PIE: An estimate of the player's contributions and impact</li>
-<li>FGM_PG: Field Goals Made per Game</li>
-</ul>
-
-<h3>
-<a id="misc-dataset" class="anchor" href="#misc-dataset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Misc Dataset</h3>
-
-<ul>
-<li>PLAYER_ID: Unique ID for each Player</li>
-<li>PTS_OFF_TOV: Points off Turnovers</li>
-<li>PTS_2ND_CHANCE: Points off second chances</li>
-<li>PTS_FB: Points off fast breaks</li>
-<li>PTS_PAINT: Points scored in the paint</li>
-<li>OPP_PTS_OFF_TOV: Opponent's points off turnovers</li>
-<li>OPP_PTS_2ND_CHANCE: Opponent's off second chances</li>
-<li>OPP_PTS_FB: Opponent's points off fast breaks</li>
-<li>OPP_PTS_PAINT: Opponent's points in the paint</li>
-</ul>
-
-<h3>
-<a id="usage-dataset" class="anchor" href="#usage-dataset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage Dataset</h3>
-
-<ul>
-<li>PLAYER_ID: Unique ID for each Player</li>
-<li>PCT_FGM: Percentage of the team's field goals made while player is on the court</li>
-<li>PCT_FGA: Percentage of the team's field goal attempts while player is on the court</li>
-<li>PCT_FG3M: Percentage of the team's 3Pts made while player is on the court</li>
-<li>PCT_FG3A: Percentage of the team's 3Pt attempts while player is on the court</li>
-<li>PCT_FTM: Percentage of the team's free throws made while player is on the court</li>
-<li>PCT_FTA: Percentage of the team's free throw attempts while player is on the court</li>
-<li>PCT_OREB: Percentage of the team's offensive rebounds obtained while player is on the court</li>
-<li>PCT_DREB: Percentage of the team's defensive rebounds obtained while player is on the court</li>
-<li>PCT_REB: Percentage of the team's rebounds obtained while player is on the court</li>
-<li>PCT_AST: Percentage of the team's assists made while player is on the court</li>
-<li>PCT_TOV: Percentage of the team's turnovers commited while player is on the court</li>
-<li>PCT_STL: Percentage of the team's steals made while player is on the court</li>
-<li>PCT_BLK: Percentage of the team's blocks made while player is on the court</li>
-<li>PCT_BLKA: Percentage of the team's blocks attempted while player is on the court</li>
-<li>PCT_PF: Percentage of the team's personal fouls that player has while on the court</li>
-<li>PCT_PFD: Percentage of the team's personal fouls drawn while player is on the court</li>
-<li>PCT_PTS: Percentage of the team's points scored while player is on the court</li>
-</ul>
-
-<h3>
-<a id="scoring-dataset" class="anchor" href="#scoring-dataset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scoring Dataset</h3>
-
-<ul>
-<li>PLAYER_ID: Unique ID for each Player</li>
-<li>PCT_FGA_2PT: Percentage of field goal attempts that are 2 pointers</li>
-<li>PCT_FGA_3PT: Percentage of field goal attempts that are 3 pointers</li>
-<li>PCT_PTS_2PT: Percentage of points scored that are 2 pointers</li>
-<li>PCT_PTS_2PT_MR: Percentage of points scored that are 2 point midrange jumpshots</li>
-<li>PCT_PTS_3PT: Percentage of points scored that are 3 pointers</li>
-<li>PCT_PTS_FB: Percentage of points scored that are fast breaks</li>
-<li>PCT_PTS_FT: Percentage of points scored that are free throws</li>
-<li>PCT_PTS_OFF_TOV: Percentage of points scored that are off turnovers</li>
-<li>PCT_PTS_PAINT: Percentage of points scored that are in the paint</li>
-<li>PCT_AST_2PM: Percentage of 2 points made that are assisted by teammates</li>
-<li>PCT_UAST_2PM: Percentage of 2 points made that are not assisted by teammates</li>
-<li>PCT_AST_3PM: Percentage of 3 points made that are assisted by teammates</li>
-<li>PCT_UAST_3PM: Percentage of 3 points made that are not assisted by teammates</li>
-<li>PCT_AST_FGM: Percentage of field goals made that are assisted by teammates</li>
-<li>PCT_UAST_FGM: Percentage of field goals made that are not assisted by teammates</li>
-</ul>
-
-<h2>
-<a id="clutch-stats-per48-min-1996-97-to-2015-16" class="anchor" href="#clutch-stats-per48-min-1996-97-to-2015-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Clutch Stats per48 min (1996-97 to 2015-16)</h2>
-
-<p>*** Same Columns as Traditional Stats ***</p>
-
-<h2>
-<a id="shooting-stats-1996-97-to-2015-16" class="anchor" href="#shooting-stats-1996-97-to-2015-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Shooting Stats (1996-97 to 2015-16)</h2>
-
-<h3>
-<a id="player" class="anchor" href="#player" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Player</h3>
-
-<ul>
-<li>Less than 5ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-<li>5-9 ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-<li>10-14 ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-<li>15-19 ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-<li>20-24 ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-<li>25-29 ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-</ul>
-
-<h3>
-<a id="players-opponent" class="anchor" href="#players-opponent" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Player's Opponent</h3>
-
-<ul>
-<li>Less than 5ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-<li>5-9 ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-<li>10-14 ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-<li>15-19 ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-<li>20-24 ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-<li>25-29 ft
-
-<ul>
-<li>Field Goals Made</li>
-<li>Field Goal Attempts</li>
-<li>Field Goal Percentage</li>
-</ul>
-</li>
-</ul>
-
-<h2>
-<a id="gamelogs-1947-48-to-2015-16" class="anchor" href="#gamelogs-1947-48-to-2015-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gamelogs (1947-48 to 2015-16)</h2>
-
-<ul>
-<li>PLAYER_ID: Unique ID for each Player</li>
-<li>Player: Player Name</li>
-<li>Team: Team Name</li>
-<li>Match Up: Match up</li>
-<li>Game Date: Date of the game</li>
-<li>W/L: Win or Lose</li>
-<li>MIN: Minutes played</li>
-<li>PTS: Points Scored</li>
-<li>FGM: Field Goals Made</li>
-<li>FGA: Field Goal Attempts</li>
-<li>FG%: Field Goal Percentage</li>
-<li>3PM: 3Pts Made</li>
-<li>3PA: 3Pt Attempts</li>
-<li>3P%: 3Pt Percentage</li>
-<li>FTM: Free Throws Made</li>
-<li>FTA: Free Throw Attempts</li>
-<li>FT%: Free Throw Percentage</li>
-<li>OREB: Offensive Rebounds Obtained</li>
-<li>DREB: Defensive Rebounds Obtained</li>
-<li>REB: Total Rebounds Obtained</li>
-<li>AST: Assists Made</li>
-<li>STL: Steals Made</li>
-<li>BLK: Blocks Made</li>
-<li>TOV: Number of Turnovers Committed</li>
-<li>PF: Personal Fouls Committed</li>
-<li>+/-: Plus Minus Rating</li>
-</ul>
-
-<h2>
-<a id="player-bios-1996-97-to-2015-16" class="anchor" href="#player-bios-1996-97-to-2015-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Player Bios (1996-97 to 2015-16)</h2>
-
-<ul>
-<li>PLAYER_ID: Unique ID for each Player</li>
-<li>Player: Player Name</li>
-<li>Team: Current Team</li>
-<li>Age: Current Age</li>
-<li>Height: Current Height</li>
-<li>Weight: Current Weight</li>
-<li>College: College Attended, if applicable</li>
-<li>Country: Country of origin</li>
-<li>Draft Year: Year of when the player was drafted into the NBA</li>
-<li>Draft Round: Which round the player was drafted</li>
-<li>Draft Number: The draft number the player was drafted</li>
-<li>GP: Games Played</li>
-<li>PTS: Total Points in that Season</li>
-<li>REB: Total Rebounds in that Season</li>
-<li>AST: Total Assists in that Season</li>
-<li>NetRtg: Net Rating during that Season</li>
-<li>OREB%: Percentage of Offensive Rebounds a player obtains while on the court</li>
-<li>DREB%: Percentage of Defensive Rebounds a player obtains while on the court</li>
-<li>USG%: Percentage of the team's offensive possessions a player uses while on the court</li>
-<li>TS%: True Shooting Percentage adjusts 3pt and FT as part of percentage, formula: Points/[(2)(Field Goal Attempts) + (0.44)(Free Throw Attempts)]</li>
-<li>AST%: The percentage of teammate's field goals that the player assisted</li>
-</ul>
-
-<h4>
-<a id="removed-rows-columns-and-datasets" class="anchor" href="#removed-rows-columns-and-datasets" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Removed Rows, Columns and Datasets</h4>
-
-<h4>
-<a id="removed-datasets" class="anchor" href="#removed-datasets" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Removed Datasets</h4>
-
-<ul>
-<li>Traditional Defense
-
-<ul>
-<li>
-<strong>Reasoning</strong>: All the columns were duplicates taken from other advanced statistics, except for defensive win shares. Win shares was originally a probable target dummy variable, but was removed, which will be explained later.</li>
-</ul>
-</li>
-<li>Traditional Opponent
-
-<ul>
-<li>
-<strong>Reasoning</strong>: Around 50% of the columns were duplicates with other advanced statistics. The dataset itself was rather confusing to work with and took a long time just to understand how it was working. Currently as of 10/11/2016, I did not use this dataset, but in the future with more time, I will definitely explore this dataset a bit more to see how to incorporate it into my analysis.</li>
-</ul>
-</li>
-<li>Play Type
-
-<ul>
-<li>
-<strong>Reasoning</strong>: There was only 1 season (2015-16) and fairly new. Good for per season analysis between players, but not a good predictor for fantasy value. Maybe in the future with more data, it may be a better predictor, but as of now, I want to keep data to at least 20 season to keep the information consistent per player.</li>
-</ul>
-</li>
-</ul>
-
-<h4>
-<a id="removed-columns" class="anchor" href="#removed-columns" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Removed Columns</h4>
-
-<ul>
-<li>Player 30-34, 35-39, 40+ ft shooting data
-
-<ul>
-<li>
-<strong>Reasoning</strong>: Corner 3s are 22ft and NBA 3pt line is 23.75ft. There are less than a handful of players that can shoot beyond 30ft, and even then, they can be considered heaves or a "Prayer" shot. Since this is not caused by opponent's individual defense and usually caused by the opponent's team defense, they are not a good indicator to how well a player can contribute to their fantasy value, they are removed. Also, if a player makes 1 heave, he would be ranked much higher than any other player. Same if that player had to shoot a "Prayer" shot because the ball was in his hand the last 1 second of the shot clock, it would skew his shooting rank lower, even though he's a good shooter from 3.</li>
-</ul>
-</li>
-<li>Player's Opponent 30-34, 35-39, 40+ ft shooting data
-
-<ul>
-<li>
-<strong>Reasoning</strong>: Like the Player's shooting data, they are almost never caused by individual defense, rather caused by team defense. They also might cause skews in the ranking system because if 1 player defended 1 shot that missed, that player would immediately be ranked higher than a ton of players. The same goes to someone like J.R. Smith heaving a shot and making it would cause a good defender to have a terrible ranking.</li>
-</ul>
-</li>
-<li>Seasons 1946-47 to 1995-96
-
-<ul>
-<li>
-<strong>Reasoning</strong>: There are 2 reasons why these seasons were removed. The first reason was not all the statistics were recorded back then. Turnovers was not recorded until the 1977-78 season. Another example would be in the 1950s, only points, field goal made (not attempts), free throw mades, attempts and percentage were recorded. The data isn't useful for analysis. The second reason was advanced statistics were not recorded until 1996-97 season. Thus, I decided to match 20 season of gamelogs with the 20 seasons of advanced statistics.</li>
-</ul>
-</li>
-</ul>
-
-<p><a href="#table_of_contents">Back to top</a></p>
+<p>All data was scraped from stats.nba.com, which is hosted by SAP HANA relational database. NBA has been keeping very advanced statistics of all players, such as, the distance on where they shot, how their opponent's average, percentage of assisted and unassisted shots, and many more. For more information on the features used, please refer to my github page.</p>
 
 <h1>
 <a id="iii-data-cleaning-data-munging-and-dummy-targets-" class="anchor" href="#iii-data-cleaning-data-munging-and-dummy-targets-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>III. Data Cleaning, Data Munging and Dummy Targets. <a id="data_cleaning"></a>
 </h1>
 
-<p>The amazing part of the data I scraped is that it is all in JSON format and relatively clean. JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write, and easy for machines to read. The data being relatively clean means it didn't require me to change the data in any way so that my code can read it. Inputting the data into my code was simple and I can immediately get to work on analysis.</p>
+<p>The amazing part of the data I scraped is that it is all in JSON format and relatively clean. JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write, and easy for machines to read. The data, being relatively clean, didn't require me to change the data in any way so that my code can read it. Inputting the data into my code was simple and I can immediately get to work on analysis.</p>
 
 <p>Data munging and creating dummy variables was more time consuming. Data munging is a process where the data needs to be manually converted through semi-automated tools, which in my case was using Python. Dummy variables are variables I created based on the data that can be independent variables that are tested on to get results. Although the data was fairly clean and all the data I used was in the correct format, I had 20 seasons of data for traditional (base, advanced, shooting, usage, misc), clutch (base, advanced, shooting, usage, misc), shooting (player and their opponent) and player bios and 70 seasons of gamelogs, which is a huge quantity. However, the quantity of data was not an issue. The problem was that there were tons of duplicate columns in multiple datasets where I had to hand pick which columns to keep and which to remove. I also had to create a new "SEASONS" column that would help fix issues with the code and allow my code to run smoother when combining datasets together.</p>
 
@@ -522,11 +163,7 @@
 
 <p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/worst_players.png" alt="worst_players"></p>
 
-<p>Most players who were at the bottom percentile were players that only played limited amount of games per season and were either cut or benched the rest of the season. I thought about subsetting them out, but even after subsetting, they did not affect my model much, so I just left them out when I was predicting for the upcoming season instead. However, I was interested to see how large many of these types of players were labelled in my "Danger" category.</p>
-
-<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/game_risk_bar.png" alt="game_risk_bar"></p>
-
-<p>Although kind of cluttered, it was clear that low risk and danger players are the higher of the 4. This helped me confirmed that when I'm doing my final predictions later on that I subset the data with players who have played more than a certain threshold of games or limit the amount of players I want to predict.</p>
+<p>Most players who were at the bottom percentile were players that only played limited amount of games per season and were either cut or benched the rest of the season. I thought about subsetting them out, but even after subsetting, they did not affect my model much, so I just left them out when I was predicting for the upcoming season instead.</p>
 
 <p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/Age_vs_avg_risk.png" alt="age_vs_avg_risk"></p>
 
@@ -604,7 +241,7 @@
 
 <p>Random Forest is an ensemble method for Decision Trees. Ensemble Method is running the same model, over and over again, and then averaging out all the scores for a more robust score. Decision Trees are like real trees. Imagine a real tree. As the tree starts growing, more branches and leaves are made. Now imagine that the stump is your entire data. Suppose that you are classifying whether 1 data point is a cat or dog. The Decision Tree will be like, dog - yes or no. If yes, go to this branch, if no, go to this other branch. Then in those branches it will ask a new question. Is it heavy - yes or no? If yes, go to this other branch, if no, go to this other branch. The Decision Tree will continue to ask questions until it decides, yes, this is a cat. Then it will identify this point as a cat. Random Forest is just a bunch of Decision Trees. This model is helpful for my project because it will help me classify whether this player is an allstar or a bench player by making decisions.</p>
 
-<p>Random Forest Regressor and Classifier was my main modeling tool to predict my 2016-17 fantasy ranks. I chose Random Forest over Decision Trees because it was an ensemble method, which helped me test the strength of my dataset through bagging techniques. But the biggest reason I chose Random Forests was because it will help me categorize continuous variables into groups and split them, based on all my features, to determine a good player versus a bad player. I also figured, Random Forests will be able to help categorize the players in the 14 rounds I wanted to. I can create a new product, or ranking system, which I believe can beat Yahoo, ESPN, CBS and other ranking algorithms. If I wanted to improve my score, I would probably try and use Gradiant Boosted Trees.</p>
+<p>Random Forest Regressor and Classifier was my main modeling tool to predict my 2016-17 fantasy ranks. I chose Random Forest over Decision Trees because it was an ensemble method, which helped me test the strength of my dataset through bagging techniques. But the biggest reason I chose Random Forests was because it will help me categorize continuous variables into groups and split them, based on all my features, to determine a good player versus a bad player. I also figured, Random Forests will be able to help categorize the players in the 14 rounds I wanted to. I can create a new product, or ranking system, which I believe can beat Yahoo, ESPN, CBS and other ranking algorithms. If I wanted to improve my score, I would probably try and use Gradient Boosted Trees.</p>
 
 <p><a href="#table_of_contents">Back to top</a></p>
 
@@ -632,16 +269,36 @@
 <p>Although only using the basic 9 categories of FGM/FGA, FTM/FTA, 3PTM, Points, Rebounds, Assists, Steals, Blocks and Turnovers, every single column was positively linearly correlated (positive is when 1 variable goes up, the other variable will go up as well, negative would be when 1 variable goes up, the other simultaneously goes down). However, there may be still some multicollinearity, but I don't think it's a bad thing. Multicollinearity is when 2 or more columns are so correlated that one column can predict the other column at a high accuracy. This may be a problem where the R-squared increases when it shouldn't. However, I doubt removing those features will vastly affect my score because the columns are all good predictors to my dummy targets, so at this point I was ready to move onto Random Forests.</p>
 
 <h2>
+<a id="logistic-regression-confusion-matrix" class="anchor" href="#logistic-regression-confusion-matrix" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logistic Regression Confusion Matrix</h2>
+
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/logreg_confmat.png" alt="logreg_conf_matrix"></p>
+
+<p>The confusion matrix is to detect how many True Positive, False Positive, True Negative and False Negative there are when my model is predicting if the player is more injury prone or not.</p>
+
+<ol>
+<li>True Positive - Model predicted positive correctly and in actuality, it is positive.</li>
+<li>False Positive - Model predicted positive incorrectly and in actuality, it is negative.</li>
+<li>True Negative - Model predicted negative correctly and in actuality, it is negative.</li>
+<li>False Negative - Model predicted negative incorrectly and in actuality, it is positive.</li>
+</ol>
+
+<p>Confusion matrix is extremely important because if a player was predicted to be very healthy, but the model predicted him to be extremely not healthy, people drafted would be avoiding a very good player rather than picking him up. The logistic regression confusion matrix did very well predicting low and danger risk players. It also did pretty good on caution. However, high risk players (missing 25-50% games) performed extremely poorly. The model had trouble differentiating between caution, high and danger players, which is interesting. It does seem that players who have high risk (203) tend to lean towards danger, while some (122) leaning towards caution. As noted in the caution predicting 75 as high, it might be better to create 3 brackets instead of 4. However, I want to see how my random forest classifier performs before deciding whether to go with 3 or 4 brackets.</p>
+
+<h2>
 <a id="logistic-regression-rocauc" class="anchor" href="#logistic-regression-rocauc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logistic Regression ROC/AUC</h2>
 
 <p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/multiclass_roc.png" alt="multiclass_roc_logreg"></p>
+
+<p>The ROC curve (Receiver Operating Characteristic) is a chart that plots the True Positives over the False Positives. The point of the curve is to make sure that when your model is predicting if it is yes or no, at what probability rate is the model predicting yes and it actually is yes, and no when it is actually yes. The diagonal line is the baseline, where guess would be the same probability. Below the line is your model guessing no more, when it is actually yes.</p>
+
+<p>As noted before, low, caution and danger risk players perform well and high, although overall it seems to have predicted more true positives than false negatives, did not perform that well.</p>
 
 <h2>
 <a id="logistic-regression-classification-report" class="anchor" href="#logistic-regression-classification-report" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logistic Regression Classification Report</h2>
 
 <p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/logreg_report.png" alt="logreg_class_report"></p>
 
-<p>Games Missed Risk was expected to perform poorly. I wasn't too surprised with the results because of the initial fantasy points mean density graph. There are more players performing lower than average due to the different amount of games a superstar or allstar performed compared to a bench player or a player on the borderline to being cut. Because of that, the previously games missed risk bar graph showed that low risk and danger had the most volume of players, so the precision that they were correctly identified was higher. Precision is when the model predicts yes, how often is it correct. However, both precision and recall were not great, there were more false negative and false positives than true positives and true negatives. Recall is how often the model predicts yes, and it is actually yes. Hence, the low F1-score. F1-score is the weighted average between precision and recall, where 0 is bad and 1 is good. The higher the value the better the predictor is at guessing correctly. This may be interesting to see if it can be tweaked a bit more, such as moving to 3 classes instead of 4, but I wanted to see how my Random Forest performed in comparison to my logistic regression. The ROC curve (Receiver Operating Characteristic) is a chart that plots the True Positives over the False Positives. The point of the curve is to make sure that when your model is predicting if it is yes or no, at what probability rate is the model predicting yes and it actually is yes, and no when it is actually yes. The diagonal line is the baseline, where guess would be the same probability. Below the line is your model guessing no more, when it is actually yes.</p>
+<p>Precision is when the model predicts yes, how often is it correct. Recall is how often the model predicts yes, and it is actually yes. F1-score is the weighted average between precision and recall, where 0 is bad and 1 is good. Both precision and recall were not great, there were more false negative and false positives than true positives and true negatives. The higher the value, the better the predictor is at guessing correctly. As mentioned before, this may be interesting to see if it can be tweaked a bit more, such as moving to 3 classes instead of 4, but I wanted to see how my Random Forest performed in comparison to my logistic regression.</p>
 
 <h1>
 <a id="linearlogistic-regression-feature-importance" class="anchor" href="#linearlogistic-regression-feature-importance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Linear/Logistic Regression Feature Importance</h1>
@@ -679,21 +336,14 @@
 
 <p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/confusionmatrix.png" alt="conf_matrix"></p>
 
+<p>My random forest classifier for games missed risk performed extremely well, much better than my logistic regression. The model was able to correctly predict all 4 brackets extremely accurate.</p>
+
 <h2>
 <a id="random-forest-classification-report" class="anchor" href="#random-forest-classification-report" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random Forest Classification Report</h2>
 
 <p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/rf_report.png" alt="rf_report"></p>
 
-<p>The confusion matrix is to detect how many True Positive, False Positive, True Negative and False Negative there are when my model is predicting if the player is more injury prone or not.</p>
-
-<ol>
-<li>True Positive - Model predicted positive correctly and in actuality, it is positive.</li>
-<li>False Positive - Model predicted positive incorrectly and in actuality, it is negative.</li>
-<li>True Negative - Model predicted negative correctly and in actuality, it is negative.</li>
-<li>False Negative - Model predicted negative incorrectly and in actuality, it is positive.</li>
-</ol>
-
-<p>Confusion matrix is extremely important because if a player was predicted to be very healthy, but the model predicted him to be extremely not healthy, people drafted would be avoiding a very good player rather than picking him up. Since my model predicted mostly correct, the classification report is accurate.</p>
+<p>Makes sense that my precision, recall and f1-score are all much better compared to my logistic regression.</p>
 
 <h1>
 <a id="random-forest-feature-importance" class="anchor" href="#random-forest-feature-importance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random Forest Feature Importance</h1>

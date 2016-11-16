@@ -287,7 +287,7 @@
 <h2>
 <a id="logistic-regression-rocauc" class="anchor" href="#logistic-regression-rocauc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logistic Regression ROC/AUC</h2>
 
-<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/multiclass_roc.png" alt="multiclass_roc_logreg"></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/logreg_roc_curve.png" alt="multiclass_roc_logreg"></p>
 
 <p>The ROC curve (Receiver Operating Characteristic) is a chart that plots the True Positives over the False Positives. The point of the curve is to make sure that when your model is predicting if it is yes or no, at what probability rate is the model predicting yes and it actually is yes, and no when it is actually yes. The diagonal line is the baseline, where guess would be the same probability. Below the line is your model guessing no more, when it is actually yes.</p>
 
@@ -296,7 +296,7 @@
 <h2>
 <a id="logistic-regression-classification-report" class="anchor" href="#logistic-regression-classification-report" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Logistic Regression Classification Report</h2>
 
-<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshots/logreg_report.png" alt="logreg_class_report"></p>
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/logreg_classreport.png" alt="logreg_class_report"></p>
 
 <p>Precision is when the model predicts yes, how often is it correct. Recall is how often the model predicts yes, and it is actually yes. F1-score is the weighted average between precision and recall, where 0 is bad and 1 is good. Both precision and recall were not great, there were more false negative and false positives than true positives and true negatives. The higher the value, the better the predictor is at guessing correctly. As mentioned before, this may be interesting to see if it can be tweaked a bit more, such as moving to 3 classes instead of 4, but I wanted to see how my Random Forest performed in comparison to my logistic regression.</p>
 
@@ -337,6 +337,13 @@
 <p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/confusionmatrix.png" alt="conf_matrix"></p>
 
 <p>My random forest classifier for games missed risk performed extremely well, much better than my logistic regression. The model was able to correctly predict all 4 brackets extremely accurate.</p>
+
+<h2>
+<a id="random-forest-rocauc" class="anchor" href="#random-forest-rocauc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random Forest ROC/AUC</h2>
+
+<p><img src="https://rawgit.com/azedlee/nba_fantasy_ranking/master/screenshot2/rf_roc_curve.png" alt="rf_roc_curve"></p>
+
+<p>My ROC/AUC also showed a near perfection of being correct.</p>
 
 <h2>
 <a id="random-forest-classification-report" class="anchor" href="#random-forest-classification-report" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random Forest Classification Report</h2>
